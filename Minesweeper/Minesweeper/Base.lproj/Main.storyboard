@@ -26,6 +26,9 @@
                                 </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="38"/>
                                 <state key="normal" title="Start"/>
+                                <connections>
+                                    <action selector="startAction:" destination="BYZ-38-t0r" eventType="touchUpInside" id="21g-7y-N3x"/>
+                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="LR8-bt-Fyv">
                                 <rect key="frame" x="217.5" y="562" width="120" height="80"/>
@@ -35,9 +38,12 @@
                                 </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="38"/>
                                 <state key="normal" title="Exit"/>
+                                <connections>
+                                    <action selector="exitAction:" destination="BYZ-38-t0r" eventType="touchUpInside" id="DjQ-lB-H4j"/>
+                                </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Minesweeper" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ebo-tt-mG7">
-                                <rect key="frame" x="37.5" y="124" width="300" height="60"/>
+                                <rect key="frame" x="37.5" y="104" width="300" height="60"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="60" id="aW3-lS-V1l"/>
                                     <constraint firstAttribute="width" constant="300" id="x3z-pA-BQo"/>
@@ -47,7 +53,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Enter your name" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="2hn-M9-WGi">
-                                <rect key="frame" x="37.5" y="199" width="300" height="50"/>
+                                <rect key="frame" x="37.5" y="179" width="300" height="50"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="50" id="IhZ-Pd-6Mb"/>
                                     <constraint firstAttribute="width" constant="300" id="stS-Bg-BRX"/>
@@ -56,35 +62,120 @@
                                 <fontDescription key="fontDescription" type="system" pointSize="34"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="pw2-sv-M8k">
-                                <rect key="frame" x="164" y="282" width="46" height="30"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="Button"/>
-                            </button>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="equalSpacing" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="aTw-1a-z30">
+                                <rect key="frame" x="127.5" y="263.5" width="120" height="260"/>
+                                <subviews>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="pw2-sv-M8k" customClass="DLRadioButton">
+                                        <rect key="frame" x="0.0" y="0.0" width="120" height="60"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="60" id="8mW-YK-t5u"/>
+                                            <constraint firstAttribute="width" constant="120" id="qFW-Pz-FIQ"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" type="system" pointSize="32"/>
+                                        <state key="normal" title="Easy">
+                                            <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        </state>
+                                        <userDefinedRuntimeAttributes>
+                                            <userDefinedRuntimeAttribute type="color" keyPath="indicatorColor">
+                                                <color key="value" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                            </userDefinedRuntimeAttribute>
+                                        </userDefinedRuntimeAttributes>
+                                        <connections>
+                                            <action selector="radioButtonAction:" destination="BYZ-38-t0r" eventType="touchUpInside" id="Fkg-R7-K20"/>
+                                            <outletCollection property="otherButtons" destination="gF4-7D-7iA" id="PdX-bx-V13"/>
+                                            <outletCollection property="otherButtons" destination="3H2-g1-NIx" id="FLZ-d1-phJ"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="gF4-7D-7iA" customClass="DLRadioButton">
+                                        <rect key="frame" x="0.0" y="100" width="120" height="60"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="120" id="0JH-1j-7oP"/>
+                                            <constraint firstAttribute="height" constant="60" id="W56-JG-DiM"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" type="system" pointSize="32"/>
+                                        <state key="normal" title="Normal">
+                                            <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        </state>
+                                        <userDefinedRuntimeAttributes>
+                                            <userDefinedRuntimeAttribute type="color" keyPath="indicatorColor">
+                                                <color key="value" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                            </userDefinedRuntimeAttribute>
+                                        </userDefinedRuntimeAttributes>
+                                        <connections>
+                                            <action selector="radioButtonAction:" destination="BYZ-38-t0r" eventType="touchUpInside" id="4pf-Lu-QtD"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="3H2-g1-NIx" customClass="DLRadioButton">
+                                        <rect key="frame" x="0.0" y="200" width="120" height="60"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="120" id="0XS-Q2-gVd"/>
+                                            <constraint firstAttribute="height" constant="60" id="N5w-ij-oGC"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" type="system" pointSize="32"/>
+                                        <state key="normal" title="Hard">
+                                            <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        </state>
+                                        <userDefinedRuntimeAttributes>
+                                            <userDefinedRuntimeAttribute type="color" keyPath="indicatorColor">
+                                                <color key="value" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                            </userDefinedRuntimeAttribute>
+                                        </userDefinedRuntimeAttributes>
+                                        <connections>
+                                            <action selector="radioButtonAction:" destination="BYZ-38-t0r" eventType="touchUpInside" id="hcb-7k-EpP"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="260" id="E49-Do-3ei"/>
+                                    <constraint firstAttribute="width" constant="120" id="Emm-qB-ZFn"/>
+                                </constraints>
+                            </stackView>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
                             <constraint firstItem="ebo-tt-mG7" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="7RN-pe-FA4"/>
                             <constraint firstItem="LR8-bt-Fyv" firstAttribute="trailing" secondItem="2hn-M9-WGi" secondAttribute="trailing" id="AsS-kk-1sm"/>
                             <constraint firstItem="WVn-7a-2Uh" firstAttribute="leading" secondItem="2hn-M9-WGi" secondAttribute="leading" id="F4A-1w-Dm8"/>
+                            <constraint firstItem="aTw-1a-z30" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="Nui-pd-p63"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="WVn-7a-2Uh" secondAttribute="bottom" constant="25" id="Nw9-Y6-9MV"/>
-                            <constraint firstItem="2hn-M9-WGi" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="135" id="VXI-Mx-0Gr"/>
+                            <constraint firstItem="2hn-M9-WGi" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="115" id="VXI-Mx-0Gr"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="LR8-bt-Fyv" secondAttribute="bottom" constant="25" id="X7m-c9-GLS"/>
+                            <constraint firstItem="aTw-1a-z30" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" constant="60" id="Zut-Ie-ILG"/>
                             <constraint firstItem="2hn-M9-WGi" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="l3v-Yg-gpK"/>
-                            <constraint firstItem="ebo-tt-mG7" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="60" id="yeM-LK-nVR"/>
+                            <constraint firstItem="ebo-tt-mG7" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="40" id="yeM-LK-nVR"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
                     <navigationItem key="navigationItem" id="GZI-Ct-o2c"/>
+                    <connections>
+                        <outlet property="nameTextField" destination="2hn-M9-WGi" id="UaG-Vp-CoV"/>
+                        <segue destination="h4k-ZH-t1R" kind="show" identifier="mainToGame" id="DgA-W4-fY3"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="856.79999999999995" y="110.19490254872565"/>
         </scene>
+        <!--Game View Controller-->
+        <scene sceneID="Znk-mn-ukW">
+            <objects>
+                <viewController id="Xhw-2f-WdS" customClass="GameViewController" customModule="Minesweeper" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="s2k-OA-4bY">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <viewLayoutGuide key="safeArea" id="yei-Gs-SRt"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="07o-aw-50y"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="b1d-u0-edG" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="3015.1999999999998" y="108.39580209895054"/>
+        </scene>
         <!--Navigation Controller-->
         <scene sceneID="Rla-3z-q3N">
             <objects>
-                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="ebb-Va-Pc6" sceneMemberID="viewController">
+                <navigationController storyboardIdentifier="MainNavigationController" automaticallyAdjustsScrollViewInsets="NO" id="ebb-Va-Pc6" sceneMemberID="viewController">
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="yx1-5s-MO0">
                         <rect key="frame" x="0.0" y="20" width="375" height="44"/>
@@ -98,6 +189,24 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="SnC-Ee-C3N" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="-60" y="110"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="6WA-8e-aQP">
+            <objects>
+                <navigationController storyboardIdentifier="GameNavigationController" automaticallyAdjustsScrollViewInsets="NO" id="h4k-ZH-t1R" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="6Ve-lw-sZF">
+                        <rect key="frame" x="0.0" y="20" width="375" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="Xhw-2f-WdS" kind="relationship" relationship="rootViewController" id="0jK-7g-n7p"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dHq-MN-QKf" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2076" y="108.39580209895054"/>
         </scene>
     </scenes>
 </document>
