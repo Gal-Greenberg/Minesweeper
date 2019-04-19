@@ -26,7 +26,6 @@ class ViewController: UIViewController {
             alert.addAction(UIAlertAction(title: "OK", style: .default, handler: { (action: UIAlertAction) in print("")}))
             self.present(alert, animated: true, completion: nil)
         }
-        //        navigationToGame()
         performSegue(withIdentifier: "mainToGame", sender: self)
     }
     
@@ -34,22 +33,7 @@ class ViewController: UIViewController {
         exit(0)
     }
     
-    private func navigationToGame() {
-        let mainStoryboard = UIStoryboard(name: "Main", bundle: Bundle.main)
-        
-        guard let gameNavigation = mainStoryboard.instantiateViewController(withIdentifier: "GameNavigationController") as? UINavigationController else {
-            return
-        }
-        
-        if let game = gameNavigation.topViewController as? GameViewController {
-            game.nameString = nameTextField.text!
-            game.difficulty = difficulty
-        }
-        present(gameNavigation, animated: true, completion: nil)
-    }
-    
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-//        let gameController = segue.destination as! GameViewController
         let gameNavigation = segue.destination as! UINavigationController
         let gameController = gameNavigation.topViewController as! GameViewController
         gameController.nameString = nameTextField.text!

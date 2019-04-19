@@ -24,7 +24,13 @@ class EndViewController: UIViewController {
     }
     
     @IBAction func playAgainAction(_ sender: Any) {
-        navigationController?.popViewController(animated: true)
+        let mainStoryboard = UIStoryboard(name: "Main", bundle: Bundle.main)
+        
+        guard let gameNavigation = mainStoryboard.instantiateViewController(withIdentifier: "GameNavigationController") as? UINavigationController else {
+            return
+        }
+        gameNavigation.popViewController(animated: true)
+        present(gameNavigation, animated: true, completion: nil)
     }
     
     @IBAction func mainAction(_ sender: UIButton) {
@@ -34,5 +40,6 @@ class EndViewController: UIViewController {
             return
         }
         mainNavigation.popViewController(animated: true)
+        present(mainNavigation, animated: true, completion: nil)
     }
 }

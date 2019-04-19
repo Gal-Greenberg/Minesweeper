@@ -280,6 +280,7 @@
                                 <fontDescription key="fontDescription" type="system" pointSize="38"/>
                                 <state key="normal" title="Main"/>
                                 <connections>
+                                    <action selector="mainAction:" destination="Q5X-rm-P2O" eventType="touchUpInside" id="Fq7-iA-Dvo"/>
                                     <action selector="startAction:" destination="BYZ-38-t0r" eventType="touchUpInside" id="Nr1-br-O0N"/>
                                 </connections>
                             </button>
@@ -295,6 +296,7 @@
 Again</string>
                                 </state>
                                 <connections>
+                                    <action selector="playAgainAction:" destination="Q5X-rm-P2O" eventType="touchUpInside" id="ceI-s5-9aV"/>
                                     <action selector="startAction:" destination="BYZ-38-t0r" eventType="touchUpInside" id="7CG-4b-3a0"/>
                                 </connections>
                             </button>
@@ -314,6 +316,11 @@ Again</string>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="flV-uA-1sb"/>
                     </view>
+                    <connections>
+                        <outlet property="emoji" destination="NcW-7P-G4B" id="xwv-Qk-B5r"/>
+                        <outlet property="endStateLabel" destination="I9N-u2-38w" id="xbw-qm-gfn"/>
+                        <outlet property="stopwatchLabel" destination="LUo-r7-9b5" id="XNy-Ru-uH2"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="kQR-EX-h06" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
