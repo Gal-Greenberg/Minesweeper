@@ -175,6 +175,8 @@ class GameViewController: UIViewController, UICollectionViewDelegate, UICollecti
         timer.invalidate()
         time = 0
         let endController = segue.destination as! EndViewController
+        endController.difficulty = difficulty
+        endController.nameString = nameString
         endController.isWon = isWon
         endController.stopwatchString = stopwatchLabel.text!
     }

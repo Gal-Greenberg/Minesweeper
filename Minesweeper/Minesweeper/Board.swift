@@ -31,6 +31,7 @@ class Board {
             putMine()
         }
         
+        //board solution
         for x in 0..<boardSize {
             var line = ""
             for y in 0..<boardSize {
@@ -39,6 +40,7 @@ class Board {
             }
             print(line)
         }
+        print()
     }
     
     func putMine() {

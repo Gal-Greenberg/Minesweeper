@@ -21,6 +21,8 @@ class EndViewController: UIViewController {
             endStateLabel.text = "You Lost"
         }
         stopwatchLabel.text = "time: " + stopwatchString
+        
+        self.navigationItem.setHidesBackButton(true, animated: true)
     }
     
     @IBAction func playAgainAction(_ sender: Any) {
@@ -29,6 +31,7 @@ class EndViewController: UIViewController {
         guard let gameNavigation = mainStoryboard.instantiateViewController(withIdentifier: "GameNavigationController") as? UINavigationController else {
             return
         }
+        
         gameNavigation.popViewController(animated: true)
         present(gameNavigation, animated: true, completion: nil)
     }
