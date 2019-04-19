@@ -7,6 +7,9 @@ class EndViewController: UIViewController {
     @IBOutlet weak var emoji: UIImageView!
     @IBOutlet weak var endStateLabel: UILabel!
     
+    var difficulty = Int()
+    var nameString = String()
+    
     var stopwatchString = String()
     var isWon = Bool()
     var images = [UIImage(named: "happy"), UIImage(named: "sad")]
@@ -31,6 +34,9 @@ class EndViewController: UIViewController {
         guard let gameNavigation = mainStoryboard.instantiateViewController(withIdentifier: "GameNavigationController") as? UINavigationController else {
             return
         }
+        let gameController = gameNavigation.topViewController as! GameViewController
+        gameController.nameString = nameString
+        gameController.difficulty = difficulty
         
         gameNavigation.popViewController(animated: true)
         present(gameNavigation, animated: true, completion: nil)

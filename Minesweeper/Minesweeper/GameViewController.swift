@@ -89,7 +89,7 @@ class GameViewController: UIViewController, UICollectionViewDelegate, UICollecti
     func setupCollectionView() {
         collectionView = nil
         
-        let frame = CGRect(x: 20, y: 160, width: view.frame.width - 40, height: view.frame.height - 290)
+        let frame = CGRect(x: 20, y: 180, width: view.frame.width - 40, height: view.frame.height - 330)
         let widthCell = Int(frame.width) / boardSize
         let heightCell = Int(frame.height) / boardSize
         
