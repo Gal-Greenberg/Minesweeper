@@ -64,6 +64,10 @@ class GameViewController: UIViewController, UICollectionViewDelegate, UICollecti
         setupCollectionView()
     }
     
+    deinit {
+        print("GameViewController deleted")
+    }
+    
     @IBAction func flagButtonAction(_ sender: UIButton) {
         game.symbol = SymbolsToDraw.Flag
         mouseButton.layer.borderColor = UIColor.clear.cgColor
