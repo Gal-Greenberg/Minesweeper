@@ -7,9 +7,6 @@ class EndViewController: UIViewController {
     @IBOutlet weak var emoji: UIImageView!
     @IBOutlet weak var endStateLabel: UILabel!
     
-    var difficulty = Int()
-    var nameString = String()
-    
     var stopwatchString = String()
     var isWon = Bool()
     var images = [UIImage(named: "happy"), UIImage(named: "sad")]
@@ -29,26 +26,10 @@ class EndViewController: UIViewController {
     }
     
     @IBAction func playAgainAction(_ sender: Any) {
-        let mainStoryboard = UIStoryboard(name: "Main", bundle: Bundle.main)
-        
-        guard let gameNavigation = mainStoryboard.instantiateViewController(withIdentifier: "GameNavigationController") as? UINavigationController else {
-            return
-        }
-        let gameController = gameNavigation.topViewController as! GameViewController
-        gameController.nameString = nameString
-        gameController.difficulty = difficulty
-        
-        gameNavigation.popViewController(animated: true)
-        present(gameNavigation, animated: true, completion: nil)
+        navigationController?.popViewController(animated: true)
     }
     
     @IBAction func mainAction(_ sender: UIButton) {
-        let mainStoryboard = UIStoryboard(name: "Main", bundle: Bundle.main)
-        
-        guard let mainNavigation = mainStoryboard.instantiateViewController(withIdentifier: "MainNavigationController") as? UINavigationController else {
-            return
-        }
-        mainNavigation.popViewController(animated: true)
-        present(mainNavigation, animated: true, completion: nil)
+        dismiss(animated: true, completion: nil)
     }
 }

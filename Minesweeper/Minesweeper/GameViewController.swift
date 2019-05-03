@@ -26,6 +26,26 @@ class GameViewController: UIViewController, UICollectionViewDelegate, UICollecti
     
     override func viewDidLoad() {
         super.viewDidLoad()
+//        timer =  Timer.scheduledTimer(withTimeInterval: 1, repeats: true, block: { _ in self.updateStopwatchLabel() })
+//        if difficulty == 0 {
+//            minesNum = 5
+//            boardSize = 5
+//        } else if difficulty == 1 {
+//            minesNum = 20
+//            boardSize = 10
+//        } else if difficulty == 2 {
+//            minesNum = 30
+//            boardSize = 10
+//        }
+//        game = Game(name: nameString, minesNum: minesNum, boardSize: boardSize)
+//        updateMinesNumLabel()
+//        nameLabel.text = nameString
+//        mouseButtonAction(mouseButton)
+//        setupCollectionView()
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
         timer =  Timer.scheduledTimer(withTimeInterval: 1, repeats: true, block: { _ in self.updateStopwatchLabel() })
         if difficulty == 0 {
             minesNum = 5
@@ -51,7 +71,7 @@ class GameViewController: UIViewController, UICollectionViewDelegate, UICollecti
         flagButton.layer.borderColor = UIColor.black.cgColor
     }
     
-    @IBAction func mouseButtonAction(_ sender: Any) {
+    @IBAction func mouseButtonAction(_ sender: UIButton) {
         game.symbol = SymbolsToDraw.Mouse
         flagButton.layer.borderColor = UIColor.clear.cgColor
         mouseButton.layer.borderWidth = 3
@@ -174,9 +194,8 @@ class GameViewController: UIViewController, UICollectionViewDelegate, UICollecti
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         timer.invalidate()
         time = 0
+        
         let endController = segue.destination as! EndViewController
-        endController.difficulty = difficulty
-        endController.nameString = nameString
         endController.isWon = isWon
         endController.stopwatchString = stopwatchLabel.text!
     }
