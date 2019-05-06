@@ -11,6 +11,10 @@ class ViewController: UIViewController {
         super.viewDidLoad()
     }
     
+    deinit {
+        print("ViewController deleted")
+    }
+    
     @IBAction func radioButtonAction(_ sender: DLRadioButton) {
         difficulty = sender.tag
     }
@@ -26,18 +30,26 @@ class ViewController: UIViewController {
             alert.addAction(UIAlertAction(title: "OK", style: .default, handler: { (action: UIAlertAction) in print("")}))
             self.present(alert, animated: true, completion: nil)
         }
-        performSegue(withIdentifier: "mainToGame", sender: self)
+        navigationToGame()
     }
     
     @IBAction func exitAction(_ sender: UIButton) {
         exit(0)
     }
     
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        let gameNavigation = segue.destination as! UINavigationController
-        let gameController = gameNavigation.topViewController as! GameViewController
-        gameController.nameString = nameTextField.text!
-        gameController.difficulty = difficulty
+    func navigationToGame() {
+        let mainStoryboard = UIStoryboard(name: "Main", bundle: Bundle.main)
+        
+        guard let gameNavigation = mainStoryboard.instantiateViewController(withIdentifier: "GameNavigationController") as? UINavigationController else {
+            return
+        }
+        
+        if let gameController = gameNavigation.topViewController as? GameViewController {
+            gameController.nameString = nameTextField.text!
+            gameController.difficulty = difficulty
+        }
+        
+        present(gameNavigation, animated: true, completion: nil)
     }
 }
 

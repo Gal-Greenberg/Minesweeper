@@ -26,22 +26,6 @@ class GameViewController: UIViewController, UICollectionViewDelegate, UICollecti
     
     override func viewDidLoad() {
         super.viewDidLoad()
-//        timer =  Timer.scheduledTimer(withTimeInterval: 1, repeats: true, block: { _ in self.updateStopwatchLabel() })
-//        if difficulty == 0 {
-//            minesNum = 5
-//            boardSize = 5
-//        } else if difficulty == 1 {
-//            minesNum = 20
-//            boardSize = 10
-//        } else if difficulty == 2 {
-//            minesNum = 30
-//            boardSize = 10
-//        }
-//        game = Game(name: nameString, minesNum: minesNum, boardSize: boardSize)
-//        updateMinesNumLabel()
-//        nameLabel.text = nameString
-//        mouseButtonAction(mouseButton)
-//        setupCollectionView()
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -62,10 +46,6 @@ class GameViewController: UIViewController, UICollectionViewDelegate, UICollecti
         nameLabel.text = nameString
         mouseButtonAction(mouseButton)
         setupCollectionView()
-    }
-    
-    deinit {
-        print("GameViewController deleted")
     }
     
     @IBAction func flagButtonAction(_ sender: UIButton) {
