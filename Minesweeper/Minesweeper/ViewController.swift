@@ -9,18 +9,13 @@ class ViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        print(view.frame.height)
-    }
-    
-    deinit {
-        print("ViewController deleted")
     }
     
     @IBAction func radioButtonAction(_ sender: DLRadioButton) {
         difficulty = sender.tag
     }
     
-    @IBAction func startAction(_ sender: Any) {
+    @IBAction func startAction(_ sender: UIButton) {
         if nameTextField.text == "" {
             let alert = UIAlertController(title: "Missing info", message: "Enter your name", preferredStyle: .alert)
             alert.addAction(UIAlertAction(title: "OK", style: .default, handler: { (action: UIAlertAction) in print("")}))
@@ -34,8 +29,14 @@ class ViewController: UIViewController {
         navigationToGame()
     }
     
-    @IBAction func exitAction(_ sender: UIButton) {
-        exit(0)
+    @IBAction func scoreAction(_ sender: UIButton) {
+        let mainStoryboard = UIStoryboard(name: "Main", bundle: Bundle.main)
+        
+        guard let scoreNavigation = mainStoryboard.instantiateViewController(withIdentifier: "ScoreNavigationController") as? UINavigationController else {
+            return
+        }
+        
+        present(scoreNavigation, animated: true, completion: nil)
     }
     
     func navigationToGame() {
