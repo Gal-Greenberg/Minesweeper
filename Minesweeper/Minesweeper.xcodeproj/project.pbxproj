@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		B062E48022816B16002B2191 /* ScoreViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B062E47F22816B16002B2191 /* ScoreViewController.swift */; };
+		B062E48322816C4B002B2191 /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B062E48222816C4B002B2191 /* MapKit.framework */; };
+		B062E48522817AC0002B2191 /* ScoreCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B062E48422817AC0002B2191 /* ScoreCollectionViewCell.swift */; };
 		B0C87D842268F90100D5C251 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0C87D832268F90100D5C251 /* AppDelegate.swift */; };
 		B0C87D862268F90100D5C251 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0C87D852268F90100D5C251 /* ViewController.swift */; };
 		B0C87D892268F90100D5C251 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B0C87D872268F90100D5C251 /* Main.storyboard */; };
@@ -41,6 +44,9 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		B062E47F22816B16002B2191 /* ScoreViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScoreViewController.swift; sourceTree = "<group>"; };
+		B062E48222816C4B002B2191 /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
+		B062E48422817AC0002B2191 /* ScoreCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScoreCollectionViewCell.swift; sourceTree = "<group>"; };
 		B0C87D802268F90100D5C251 /* Minesweeper.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Minesweeper.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		B0C87D832268F90100D5C251 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		B0C87D852268F90100D5C251 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -70,6 +76,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B062E48322816C4B002B2191 /* MapKit.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -90,6 +97,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		B062E48122816C4B002B2191 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				B062E48222816C4B002B2191 /* MapKit.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		B0C87D772268F90100D5C251 = {
 			isa = PBXGroup;
 			children = (
@@ -97,6 +112,7 @@
 				B0C87D9A2268F90600D5C251 /* MinesweeperTests */,
 				B0C87DA52268F90600D5C251 /* MinesweeperUITests */,
 				B0C87D812268F90100D5C251 /* Products */,
+				B062E48122816C4B002B2191 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -119,6 +135,8 @@
 				B0C87DBF2269031E00D5C251 /* MineCollectionViewCell.swift */,
 				B0C87DC3226903C900D5C251 /* EndViewController.swift */,
 				B0C87D872268F90100D5C251 /* Main.storyboard */,
+				B062E47F22816B16002B2191 /* ScoreViewController.swift */,
+				B062E48422817AC0002B2191 /* ScoreCollectionViewCell.swift */,
 				B0C87DC52269040100D5C251 /* Game.swift */,
 				B0C87DC12269038000D5C251 /* Board.swift */,
 				B0C87D8D2268F90500D5C251 /* Assets.xcassets */,
@@ -227,6 +245,11 @@
 					B0C87D7F2268F90100D5C251 = {
 						CreatedOnToolsVersion = 10.1;
 						LastSwiftMigration = 1010;
+						SystemCapabilities = {
+							com.apple.Maps.iOS = {
+								enabled = 1;
+							};
+						};
 					};
 					B0C87D962268F90600D5C251 = {
 						CreatedOnToolsVersion = 10.1;
@@ -297,6 +320,8 @@
 				B0C87D8C2268F90100D5C251 /* Minesweeper.xcdatamodeld in Sources */,
 				B0C87DBC226900A700D5C251 /* DLRadioButton.m in Sources */,
 				B0C87DC22269038000D5C251 /* Board.swift in Sources */,
+				B062E48022816B16002B2191 /* ScoreViewController.swift in Sources */,
+				B062E48522817AC0002B2191 /* ScoreCollectionViewCell.swift in Sources */,
 				B0C87D862268F90100D5C251 /* ViewController.swift in Sources */,
 				B0C87D842268F90100D5C251 /* AppDelegate.swift in Sources */,
 			);

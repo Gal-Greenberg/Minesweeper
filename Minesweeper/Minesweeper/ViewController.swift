@@ -9,6 +9,7 @@ class ViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        print(view.frame.height)
     }
     
     deinit {
