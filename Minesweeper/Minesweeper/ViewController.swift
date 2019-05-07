@@ -29,16 +29,6 @@ class ViewController: UIViewController {
         navigationToGame()
     }
     
-    @IBAction func scoreAction(_ sender: UIButton) {
-        let mainStoryboard = UIStoryboard(name: "Main", bundle: Bundle.main)
-        
-        guard let scoreNavigation = mainStoryboard.instantiateViewController(withIdentifier: "ScoreNavigationController") as? UINavigationController else {
-            return
-        }
-        
-        present(scoreNavigation, animated: true, completion: nil)
-    }
-    
     func navigationToGame() {
         let mainStoryboard = UIStoryboard(name: "Main", bundle: Bundle.main)
         

@@ -12,7 +12,7 @@ class ScoreViewController: UIViewController, UICollectionViewDelegate, UICollect
     
     func setupCollectionView() {
         
-        let frame = CGRect(x: 17.5, y: 439, width: view.frame.width - 20, height: view.frame.height - 455)
+        let frame = CGRect(x: 14, y: 439, width: view.frame.width - 28, height: view.frame.height - 455)
         let widthCell = Int(frame.width) / 5
         let heightCell = Int(frame.height) / 10
         
@@ -23,7 +23,7 @@ class ScoreViewController: UIViewController, UICollectionViewDelegate, UICollect
         
         collectionView = UICollectionView(frame: frame, collectionViewLayout: layout)
         collectionView.register(ScoreCollectionViewCell.self, forCellWithReuseIdentifier: "scoreCell")
-        collectionView.backgroundColor = UIColor.gray
+        collectionView.backgroundColor = UIColor.white
         collectionView.delegate = self
         collectionView.dataSource = self
         view.addSubview(collectionView)
