@@ -42,9 +42,9 @@
                                 </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Minesweeper" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ebo-tt-mG7">
-                                <rect key="frame" x="37.5" y="114" width="300" height="60"/>
+                                <rect key="frame" x="37.5" y="104" width="300" height="80"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="60" id="aW3-lS-V1l"/>
+                                    <constraint firstAttribute="height" constant="80" id="aW3-lS-V1l"/>
                                     <constraint firstAttribute="width" constant="300" id="x3z-pA-BQo"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="44"/>
@@ -52,7 +52,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Enter your name" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="2hn-M9-WGi">
-                                <rect key="frame" x="37.5" y="204" width="300" height="50"/>
+                                <rect key="frame" x="37.5" y="194" width="300" height="50"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="50" id="IhZ-Pd-6Mb"/>
                                     <constraint firstAttribute="width" constant="300" id="stS-Bg-BRX"/>
@@ -148,12 +148,12 @@
                             <constraint firstItem="aTw-1a-z30" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="Nui-pd-p63"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="WVn-7a-2Uh" secondAttribute="bottom" constant="40" id="Nw9-Y6-9MV"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="LR8-bt-Fyv" secondAttribute="trailing" constant="30" id="Oa8-fv-BGb"/>
-                            <constraint firstItem="2hn-M9-WGi" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="140" id="VXI-Mx-0Gr"/>
+                            <constraint firstItem="2hn-M9-WGi" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="130" id="VXI-Mx-0Gr"/>
                             <constraint firstItem="aTw-1a-z30" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" constant="50" id="Zut-Ie-ILG"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="LR8-bt-Fyv" secondAttribute="bottom" constant="40" id="gPv-79-iGE"/>
                             <constraint firstItem="WVn-7a-2Uh" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="hFU-yu-xbN"/>
                             <constraint firstItem="2hn-M9-WGi" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="l3v-Yg-gpK"/>
-                            <constraint firstItem="ebo-tt-mG7" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="50" id="yeM-LK-nVR"/>
+                            <constraint firstItem="ebo-tt-mG7" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="40" id="yeM-LK-nVR"/>
                             <constraint firstItem="dk7-Xt-lBB" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="30" id="yin-Cd-AlQ"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
@@ -306,10 +306,10 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="I9N-u2-38w">
-                                <rect key="frame" x="37.5" y="104" width="300" height="60"/>
+                                <rect key="frame" x="107.5" y="104" width="160" height="80"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="60" id="RPQ-b9-1cy"/>
-                                    <constraint firstAttribute="width" constant="300" id="mXF-zb-RkL"/>
+                                    <constraint firstAttribute="height" constant="80" id="RPQ-b9-1cy"/>
+                                    <constraint firstAttribute="width" constant="160" id="mXF-zb-RkL"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="40"/>
                                 <color key="textColor" red="0.90319381480000005" green="0.062072542580000001" blue="0.031616012540000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -361,18 +361,31 @@ Again</string>
                                     <action selector="startAction:" destination="BYZ-38-t0r" eventType="touchUpInside" id="7CG-4b-3a0"/>
                                 </connections>
                             </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="fOX-0i-rl1">
+                                <rect key="frame" x="270" y="104" width="80" height="80"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="80" id="0g8-ZF-G3Z"/>
+                                    <constraint firstAttribute="height" constant="80" id="6MC-tH-Wi0"/>
+                                </constraints>
+                                <state key="normal" title="Exit" image="score"/>
+                                <connections>
+                                    <segue destination="mky-pX-xM6" kind="show" id="aqb-at-38v"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
                             <constraint firstItem="NcW-7P-G4B" firstAttribute="centerY" secondItem="usp-JD-Rhx" secondAttribute="centerY" id="3LX-9b-7Lm"/>
+                            <constraint firstItem="fOX-0i-rl1" firstAttribute="top" secondItem="flV-uA-1sb" secondAttribute="top" constant="40" id="Bq7-gu-Tin"/>
                             <constraint firstItem="flV-uA-1sb" firstAttribute="bottom" secondItem="lWd-G1-IRO" secondAttribute="bottom" constant="25" id="Fax-9H-iaG"/>
+                            <constraint firstItem="flV-uA-1sb" firstAttribute="trailing" secondItem="lWd-G1-IRO" secondAttribute="trailing" constant="37.5" id="HRD-Wc-NpG"/>
+                            <constraint firstItem="5gs-pZ-scT" firstAttribute="leading" secondItem="flV-uA-1sb" secondAttribute="leading" constant="37.5" id="JfG-PD-wsh"/>
                             <constraint firstItem="flV-uA-1sb" firstAttribute="bottom" secondItem="5gs-pZ-scT" secondAttribute="bottom" constant="25" id="b0b-Sw-J1Q"/>
                             <constraint firstItem="I9N-u2-38w" firstAttribute="centerX" secondItem="usp-JD-Rhx" secondAttribute="centerX" id="cdR-Td-u2J"/>
                             <constraint firstItem="NcW-7P-G4B" firstAttribute="centerX" secondItem="usp-JD-Rhx" secondAttribute="centerX" id="jo2-ST-2Sd"/>
-                            <constraint firstItem="5gs-pZ-scT" firstAttribute="leading" secondItem="I9N-u2-38w" secondAttribute="leading" id="qH2-9K-dvA"/>
+                            <constraint firstItem="flV-uA-1sb" firstAttribute="trailing" secondItem="fOX-0i-rl1" secondAttribute="trailing" constant="25" id="kZw-Lu-08c"/>
                             <constraint firstItem="flV-uA-1sb" firstAttribute="bottom" secondItem="LUo-r7-9b5" secondAttribute="bottom" constant="140" id="thN-7P-kIu"/>
                             <constraint firstItem="LUo-r7-9b5" firstAttribute="centerX" secondItem="usp-JD-Rhx" secondAttribute="centerX" id="v7E-fK-wQW"/>
-                            <constraint firstItem="lWd-G1-IRO" firstAttribute="trailing" secondItem="I9N-u2-38w" secondAttribute="trailing" id="yNF-VV-1Dc"/>
                             <constraint firstItem="I9N-u2-38w" firstAttribute="top" secondItem="flV-uA-1sb" secondAttribute="top" constant="40" id="zoo-5z-toW"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="flV-uA-1sb"/>
@@ -498,4 +511,7 @@ Happy mine hunting!</string>
         <image name="mouse icon" width="207" height="243"/>
         <image name="score" width="225" height="225"/>
     </resources>
+    <inferredMetricsTieBreakers>
+        <segue reference="aqb-at-38v"/>
+    </inferredMetricsTieBreakers>
 </document>
