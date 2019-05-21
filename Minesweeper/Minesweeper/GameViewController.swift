@@ -1,7 +1,8 @@
 
 import UIKit
+import MapKit
 
-class GameViewController: UIViewController, UICollectionViewDelegate, UICollectionViewDataSource {
+class GameViewController: UIViewController, UICollectionViewDelegate, UICollectionViewDataSource, CLLocationManagerDelegate {
 
     @IBOutlet weak var flagButton: UIButton!
     @IBOutlet weak var mouseButton: UIButton!
@@ -23,6 +24,8 @@ class GameViewController: UIViewController, UICollectionViewDelegate, UICollecti
     
     var game: Game!
     var isWon: Bool!
+    
+    let manager = CLLocationManager()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -46,6 +49,9 @@ class GameViewController: UIViewController, UICollectionViewDelegate, UICollecti
         nameLabel.text = nameString
         mouseButtonAction(mouseButton)
         setupCollectionView()
+        
+        manager.delegate = self
+        manager.desiredAccuracy = kCLLocationAccuracyKilometer
     }
     
     @IBAction func flagButtonAction(_ sender: UIButton) {

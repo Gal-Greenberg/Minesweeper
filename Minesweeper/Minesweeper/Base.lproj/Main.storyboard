@@ -306,10 +306,10 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="I9N-u2-38w">
-                                <rect key="frame" x="37.5" y="104" width="300" height="60"/>
+                                <rect key="frame" x="107.5" y="89" width="160" height="80"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="60" id="RPQ-b9-1cy"/>
-                                    <constraint firstAttribute="width" constant="300" id="mXF-zb-RkL"/>
+                                    <constraint firstAttribute="height" constant="80" id="RPQ-b9-1cy"/>
+                                    <constraint firstAttribute="width" constant="160" id="e1v-YX-X1H"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="40"/>
                                 <color key="textColor" red="0.90319381480000005" green="0.062072542580000001" blue="0.031616012540000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -361,19 +361,32 @@ Again</string>
                                     <action selector="startAction:" destination="BYZ-38-t0r" eventType="touchUpInside" id="7CG-4b-3a0"/>
                                 </connections>
                             </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="rah-px-GCs">
+                                <rect key="frame" x="270" y="89" width="80" height="80"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="80" id="PRv-A8-LON"/>
+                                    <constraint firstAttribute="height" constant="80" id="Rcn-Fs-pC1"/>
+                                </constraints>
+                                <state key="normal" title="Exit" image="score"/>
+                                <connections>
+                                    <segue destination="mky-pX-xM6" kind="show" id="s4t-EO-t5r"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
                             <constraint firstItem="NcW-7P-G4B" firstAttribute="centerY" secondItem="usp-JD-Rhx" secondAttribute="centerY" id="3LX-9b-7Lm"/>
+                            <constraint firstItem="5gs-pZ-scT" firstAttribute="leading" secondItem="flV-uA-1sb" secondAttribute="leading" constant="37.5" id="4QA-Vb-Sfc"/>
                             <constraint firstItem="flV-uA-1sb" firstAttribute="bottom" secondItem="lWd-G1-IRO" secondAttribute="bottom" constant="25" id="Fax-9H-iaG"/>
                             <constraint firstItem="flV-uA-1sb" firstAttribute="bottom" secondItem="5gs-pZ-scT" secondAttribute="bottom" constant="25" id="b0b-Sw-J1Q"/>
                             <constraint firstItem="I9N-u2-38w" firstAttribute="centerX" secondItem="usp-JD-Rhx" secondAttribute="centerX" id="cdR-Td-u2J"/>
+                            <constraint firstItem="rah-px-GCs" firstAttribute="top" secondItem="flV-uA-1sb" secondAttribute="top" constant="25" id="d8J-Lv-w9J"/>
                             <constraint firstItem="NcW-7P-G4B" firstAttribute="centerX" secondItem="usp-JD-Rhx" secondAttribute="centerX" id="jo2-ST-2Sd"/>
-                            <constraint firstItem="5gs-pZ-scT" firstAttribute="leading" secondItem="I9N-u2-38w" secondAttribute="leading" id="qH2-9K-dvA"/>
+                            <constraint firstItem="flV-uA-1sb" firstAttribute="trailing" secondItem="rah-px-GCs" secondAttribute="trailing" constant="25" id="qsq-1L-Lwe"/>
                             <constraint firstItem="flV-uA-1sb" firstAttribute="bottom" secondItem="LUo-r7-9b5" secondAttribute="bottom" constant="140" id="thN-7P-kIu"/>
                             <constraint firstItem="LUo-r7-9b5" firstAttribute="centerX" secondItem="usp-JD-Rhx" secondAttribute="centerX" id="v7E-fK-wQW"/>
-                            <constraint firstItem="lWd-G1-IRO" firstAttribute="trailing" secondItem="I9N-u2-38w" secondAttribute="trailing" id="yNF-VV-1Dc"/>
-                            <constraint firstItem="I9N-u2-38w" firstAttribute="top" secondItem="flV-uA-1sb" secondAttribute="top" constant="40" id="zoo-5z-toW"/>
+                            <constraint firstItem="flV-uA-1sb" firstAttribute="trailing" secondItem="lWd-G1-IRO" secondAttribute="trailing" constant="37.5" id="v8h-Te-3id"/>
+                            <constraint firstItem="I9N-u2-38w" firstAttribute="top" secondItem="flV-uA-1sb" secondAttribute="top" constant="25" id="zoo-5z-toW"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="flV-uA-1sb"/>
                     </view>
@@ -498,4 +511,7 @@ Happy mine hunting!</string>
         <image name="mouse icon" width="207" height="243"/>
         <image name="score" width="225" height="225"/>
     </resources>
+    <inferredMetricsTieBreakers>
+        <segue reference="jP3-XY-A80"/>
+    </inferredMetricsTieBreakers>
 </document>
