@@ -17,6 +17,7 @@ class GameViewController: UIViewController, UICollectionViewDelegate, UICollecti
     var time = 0
     var timer = Timer()
     
+    var difficultyString = String()
     var difficulty = Int()
     var nameString = String()
     var minesNum = Int()
@@ -25,7 +26,8 @@ class GameViewController: UIViewController, UICollectionViewDelegate, UICollecti
     var game: Game!
     var isWon: Bool!
     
-    let manager = CLLocationManager()
+    var locationManager = CLLocationManager()
+    var currentLocation: CLLocation!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -35,12 +37,15 @@ class GameViewController: UIViewController, UICollectionViewDelegate, UICollecti
         super.viewWillAppear(animated)
         timer =  Timer.scheduledTimer(withTimeInterval: 1, repeats: true, block: { _ in self.updateStopwatchLabel() })
         if difficulty == 0 {
+            difficultyString = "Easy"
             minesNum = 5
             boardSize = 5
         } else if difficulty == 1 {
+            difficultyString = "Normal"
             minesNum = 20
             boardSize = 10
         } else if difficulty == 2 {
+            difficultyString = "Hard"
             minesNum = 30
             boardSize = 10
         }
@@ -50,8 +55,10 @@ class GameViewController: UIViewController, UICollectionViewDelegate, UICollecti
         mouseButtonAction(mouseButton)
         setupCollectionView()
         
-        manager.delegate = self
-        manager.desiredAccuracy = kCLLocationAccuracyKilometer
+        locationManager.delegate = self
+        locationManager.desiredAccuracy = kCLLocationAccuracyKilometer
+        locationManager.requestWhenInUseAuthorization()
+        locationManager.startUpdatingLocation()
     }
     
     @IBAction func flagButtonAction(_ sender: UIButton) {
@@ -188,5 +195,17 @@ class GameViewController: UIViewController, UICollectionViewDelegate, UICollecti
         let endController = segue.destination as! EndViewController
         endController.isWon = isWon
         endController.stopwatchString = stopwatchLabel.text!
+        print(currentLocation)
+        endController.currentLocation = currentLocation
+        endController.nameString = nameString
+        endController.difficulty = difficultyString
+    }
+    
+    func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
+        currentLocation = locations[0]
+    }
+    
+    func locationManager(_ manager: CLLocationManager, didFailWithError error: Error) {
+        print(error)
     }
 }
