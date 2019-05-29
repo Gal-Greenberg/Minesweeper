@@ -20,6 +20,25 @@ class ScoreViewController: UIViewController, UICollectionViewDelegate, UICollect
         for i in 0..<numberOfScores {
             scores[i] = defaults.stringArray(forKey: "score" + String(i)) ?? [String]()
             
+            let time = Int(scores[i][2])
+            let minutes = time! / 60
+            let seconds = time! - (minutes * 60)
+            var minutesString = String()
+            var secondsString = String()
+            
+            if minutes < 10 {
+                minutesString = "0" + String(minutes)
+            } else {
+                minutesString = String(minutes)
+            }
+            
+            if seconds < 10 {
+                secondsString = "0" + String(seconds)
+            } else {
+                secondsString = String(seconds)
+            }
+            scores[i][2] = minutesString + ":" + secondsString
+            
             locationScores = defaults.object(forKey: "currentLocation" + String(i)) as! [Double]
             let mapPin = MKPointAnnotation()
             mapPin.title = String(i + 1)

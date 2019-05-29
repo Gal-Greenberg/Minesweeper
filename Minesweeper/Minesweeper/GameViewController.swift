@@ -189,16 +189,15 @@ class GameViewController: UIViewController, UICollectionViewDelegate, UICollecti
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        timer.invalidate()
-        time = 0
-        
         let endController = segue.destination as! EndViewController
         endController.isWon = isWon
-        endController.stopwatchString = stopwatchLabel.text!
-        print(currentLocation)
+        endController.time = time
         endController.currentLocation = currentLocation
         endController.nameString = nameString
         endController.difficulty = difficultyString
+        
+        timer.invalidate()
+        time = 0
     }
     
     func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
