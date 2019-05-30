@@ -318,11 +318,11 @@
                                 <color key="textColor" red="0.90319381480000005" green="0.062072542580000001" blue="0.031616012540000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="NcW-7P-G4B">
-                                <rect key="frame" x="47.5" y="193.5" width="280" height="280"/>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="happy" translatesAutoresizingMaskIntoConstraints="NO" id="NcW-7P-G4B">
+                                <rect key="frame" x="77.5" y="263.5" width="220" height="220"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="280" id="Fm6-Cg-Byd"/>
-                                    <constraint firstAttribute="width" constant="280" id="OXk-2R-G5z"/>
+                                    <constraint firstAttribute="height" constant="220" id="Fm6-Cg-Byd"/>
+                                    <constraint firstAttribute="width" constant="220" id="OXk-2R-G5z"/>
                                 </constraints>
                             </imageView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="LUo-r7-9b5">
@@ -375,10 +375,14 @@ Again</string>
                                     <segue destination="mky-pX-xM6" kind="show" id="s4t-EO-t5r"/>
                                 </connections>
                             </button>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="5Cu-gu-MIa">
+                                <rect key="frame" x="237" y="225" width="60" height="60"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </imageView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
-                            <constraint firstItem="NcW-7P-G4B" firstAttribute="centerY" secondItem="usp-JD-Rhx" secondAttribute="centerY" id="3LX-9b-7Lm"/>
+                            <constraint firstItem="NcW-7P-G4B" firstAttribute="centerY" secondItem="usp-JD-Rhx" secondAttribute="centerY" constant="40" id="3LX-9b-7Lm"/>
                             <constraint firstItem="5gs-pZ-scT" firstAttribute="leading" secondItem="flV-uA-1sb" secondAttribute="leading" constant="37.5" id="4QA-Vb-Sfc"/>
                             <constraint firstItem="flV-uA-1sb" firstAttribute="bottom" secondItem="lWd-G1-IRO" secondAttribute="bottom" constant="25" id="Fax-9H-iaG"/>
                             <constraint firstItem="flV-uA-1sb" firstAttribute="bottom" secondItem="5gs-pZ-scT" secondAttribute="bottom" constant="25" id="b0b-Sw-J1Q"/>
@@ -396,6 +400,7 @@ Again</string>
                     <connections>
                         <outlet property="emoji" destination="NcW-7P-G4B" id="xwv-Qk-B5r"/>
                         <outlet property="endStateLabel" destination="I9N-u2-38w" id="xbw-qm-gfn"/>
+                        <outlet property="mine" destination="5Cu-gu-MIa" id="5GW-oB-L11"/>
                         <outlet property="stopwatchLabel" destination="LUo-r7-9b5" id="XNy-Ru-uH2"/>
                     </connections>
                 </viewController>
@@ -509,12 +514,13 @@ Happy mine hunting!</string>
     </scenes>
     <resources>
         <image name="flagNoEdge" width="85.5" height="85"/>
+        <image name="happy" width="225" height="225"/>
         <image name="instructions" width="225" height="225"/>
         <image name="mine" width="225" height="225"/>
         <image name="mouse icon" width="207" height="243"/>
         <image name="score" width="225" height="225"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="jP3-XY-A80"/>
+        <segue reference="s4t-EO-t5r"/>
     </inferredMetricsTieBreakers>
 </document>
